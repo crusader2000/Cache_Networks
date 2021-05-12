@@ -1,0 +1,26 @@
+https://redis.io/topics/quickstart
+
+Add maxmemory to the above steps
+
+6379 - Master Server
+6380/6381/6382/6383/6384 - User Server/Users
+
+sudo /etc/init.d/redis_6379 start
+sudo /etc/init.d/redis_6379 stop
+
+sudo /etc/init.d/redis_63** start
+sudo /etc/init.d/redis_63** stop
+
+redis-cli -h localhost -p 6379
+redis-cli -h localhost -p 63**
+
+** = 80/81/82/83/84
+
+Try pinging your instance with redis-cli.
+
+Do a test save with "redis-cli save" and check that the dump file is correctly stored into /var/redis/6379/ (you should find a file called dump.rdb).
+
+To load all the data into the main server
+```
+python3 load.py
+```
